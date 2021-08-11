@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <h2><%= @restaurant.name %></h2>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.category %></p>
+</div>
+
+
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit "Submit review", class: "btn btn-success" %>
+<% end %>
+<br>
+<%= link_to 'See reviews', restaurant_reviews_path(@restaurant), class: "btn btn-outline-secondary" %>
+<br>
+<%= link_to "Back to restaurants lists", restaurants_path, class: "btn btn-outline-primary" %>

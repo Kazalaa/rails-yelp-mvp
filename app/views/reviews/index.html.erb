@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %> <br> <%= review.rating %></li>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "Back to restaurants lists", restaurants_path, class: "btn btn-outline-primary" %>
